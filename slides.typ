@@ -48,7 +48,6 @@
   footer-text-color: palette.mist,
   config-info(
     title: [AI will take your lunch.],
-    subtitle: [Learn to work with AI before it learns to work around you.],
     author: [Dr. Gaurav Manek],
     date: "2026-04-16",
     institution: [A*STAR],
@@ -69,11 +68,7 @@
 )[
 
   #place(top + left, dx: 188pt, dy: 76pt, [
-    #text(size: 48pt, fill: palette.paper, weight: 700)[is coming for your lunch.]\
-    #box(fill: palette.night.transparentize(30%), inset: (y: 12pt), outset: (x: 12pt), radius: 12pt, text(
-      size: 24pt,
-      fill: palette.mist,
-    )[Learn to work with AI before it learns to work around you.])
+    #text(size: 48pt, fill: palette.paper, weight: 700)[is coming for your lunch.]
   ])
 
   #place(bottom + left, dx: 0pt, dy: 0pt, box(outset: 12pt, radius: 12pt, fill: palette.night.transparentize(20%))[
@@ -82,13 +77,139 @@
   ])
 ]
 
-#slide(title: [Why this look works])[
+#slide(title: [1. The Question])[
   #callout[
-    The deck now uses the same visual language as the title art:
-    #v(0.5em)
-    - Deep navy backgrounds to match the night sky
-    - #accent[Electric cyan] for emphasis, links, and progress
-    - #text(fill: palette.magenta)[Neon magenta] for separators and panels
-    - #warm[Warm amber] for contrast when you want a human note
+    #text(size: 24pt)[If AI can do the task #accent[faster], why should you still learn it?]
   ]
+
+  #v(1em)
+
+  - The car goes faster. We still run.
+  - Better tools do not remove human effort; they #warm[change what human effort is for].
+  - Learning is still how you build judgment, taste, and control.
 ]
+// Graphic: split image of a sports car beside a runner on a track.
+// Tone: slightly funny, slightly confrontational, with enough empty space for a short headline.
+// Purpose: open with a visual joke that immediately leads into the core question of the talk.
+
+#slide(title: [2. AI Is Already Here])[
+  #callout[
+    AI can already help with #accent[writing], #accent[revision], #accent[code], #accent[images], and #accent[planning].
+  ]
+
+  #v(1em)
+
+  - This is not a future demo anymore.
+  - Many students are already using it quietly.
+  - The baseline for what one person can produce is moving.
+]
+// Graphic: collage of AI outputs on one desk: essay feedback, code editor, generated image, spreadsheet, and notes.
+// Tone: busy and energetic, like one student suddenly having many extra capabilities.
+// Purpose: show breadth without explaining technical details.
+
+#slide(title: [3. Your Timing Matters])[
+  #callout[
+    You are entering university and work just as the rules start to shift.
+  ]
+
+  #v(1em)
+
+  - Older students had a more stable playbook.
+  - Your batch will likely be asked to work differently.
+  - That is risky, but it is also an opportunity.
+]
+// Graphic: a road splitting toward "University" and "Work", both disappearing into fog or neon haze.
+// Tone: uncertain but not apocalyptic.
+// Purpose: make the change feel personal to JC students about to leave school.
+
+#slide(title: [4. Do Not Wait for Permission])[
+  #callout[
+    Schools, universities, and companies are still figuring out what "using AI well" even means.
+  ]
+
+  #v(1em)
+
+  - Even institutions are experimenting.
+  - In many fields, nobody can clearly describe the workflow three years from now.
+  - Waiting for an official syllabus is too slow.
+]
+// Graphic: a classroom or lecture hall overlaid with loading bars, revision marks, or "updating..." motifs.
+// Tone: systems moving slowly while technology races ahead.
+// Purpose: justify self-directed learning without sounding anti-school.
+
+#slide(title: [5. The Real Competition])[
+  #callout[
+    #warm[AI is not the only thing competing with you.] The person using AI well is.
+  ]
+
+  #v(1em)
+
+  - Same person, same task, different tools.
+  - One version struggles alone.
+  - The other uses AI as tutor, editor, and assistant.
+]
+// Graphic: split screen of the same student doing the same assignment twice, one overwhelmed and one augmented by AI tools.
+// Tone: sharp contrast, visually easy to understand at a glance.
+// Purpose: make the "AI won't replace you, a person with AI might" idea memorable.
+
+#slide(title: [6. How To Work With AI])[
+  #callout[
+    Treat AI as a #accent[tutor], #accent[sparring partner], #accent[intern], and #accent[automator].
+  ]
+
+  #v(1em)
+
+  - Tutor: explain things at your level.
+  - Sparring partner: challenge your argument and point out gaps.
+  - Intern: draft version 1 quickly.
+  - Automator: handle repetitive tasks.
+]
+// Graphic: four bold cards or panels, each showing one role with a simple icon and an example task.
+// Tone: structured and practical, less cinematic than earlier slides.
+// Purpose: turn a vague idea into a usable mental model.
+
+#slide(title: [7. Start Experimenting Now])[
+  #callout[
+    The fastest way to learn is to #warm[try things before you need them badly].
+  ]
+
+  #v(1em)
+
+  - Open an account and use it regularly.
+  - Make it teach you, critique your work, and generate ideas.
+  - Try code, art, music, notes, or revision prompts.
+  - See what breaks, then learn how to recover.
+]
+// Graphic: a challenge board or checklist styled like a 7-day sprint, with tasks getting ticked off.
+// Tone: playful, action-oriented, slightly game-like.
+// Purpose: convert urgency into a concrete first step.
+
+#slide(title: [8. Use It, Do Not Surrender To It])[
+  #callout[
+    AI is powerful, but your job is still to #accent[verify], #accent[decide], and #accent[take responsibility].
+  ]
+
+  #v(1em)
+
+  - It can be wrong.
+  - It can sound confident while being wrong.
+  - If you stop thinking, you lose the real benefit.
+]
+// Graphic: human hand on the steering wheel while an AI dashboard suggests routes and actions.
+// Tone: confident human control, not anti-AI fear.
+// Purpose: keep the talk credible by acknowledging limits and judgment.
+
+#slide(title: [9. Closing Challenge])[
+  #callout[
+    Learn to work with AI #warm[before] the world quietly starts expecting you to.
+  ]
+
+  #v(1em)
+
+  - Start early.
+  - Build instincts.
+  - Arrive at university already experimenting.
+]
+// Graphic: a lunch tray on a conveyor belt moving away while one student reaches early and another reacts too late.
+// Tone: witty callback to the title, with a sense of urgency and agency.
+// Purpose: end on the central metaphor and a clear call to action.
