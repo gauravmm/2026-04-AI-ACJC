@@ -1,5 +1,5 @@
+#import "@preview/touying:0.6.1": config-common, config-page, pause, speaker-note
 #import "@preview/metropolyst:0.1.0": config-info, metropolyst-theme, slide, title-slide
-#import "@preview/touying:0.6.1": config-common, config-page, pause
 
 #let palette = (
   ink: rgb("#080830"),
@@ -35,6 +35,12 @@
     )
   ]
 ]
+
+#let default-slide-config = config-page(
+  background: backdrop("images/bg.png", dim: 20%),
+  header: none,
+  margin: 24pt,
+)
 
 #show strong: it => text(weight: 700, fill: palette.paper, it.body)
 
@@ -83,11 +89,10 @@
   ])
 ]
 
-#slide(title: [By The Time You Graduate], config: config-page(
-  header: none,
-  background: backdrop("images/bg.png", dim: 20%),
-  margin: 0pt,
-))[
+#slide(
+  title: [By The Time You Graduate],
+  config: default-slide-config,
+)[
   #align(center, text(size: 24pt)[
     For two bubble teas a month, you can rent an intelligence that
 
@@ -109,9 +114,9 @@
     It can help with
 
     #box(width: 180%, fill: palette.ink, outset: 12pt)[
-      #text(fill: palette.violet)[history, economics, chemistry, ]
+      #text(fill: palette.violet)[history, economics, ]
       #text(fill: palette.paper)[essays, calculus, biology, chemistry, and art]
-      #text(fill: palette.violet)[, design, finance, law, and philosophy.]
+      #text(fill: palette.violet)[, design, finance, law]
     ]
     #v(.4em)#pause
 
@@ -123,41 +128,39 @@
   ])
 ]
 
-// Graphic: a student desk at night with notes, laptop, bubble tea cups, and a ghostly AI presence woven through the scene like an invisible extra worker.
-// Tone: unsettling but plausible, like an unfair advantage that already fits into ordinary student life.
-// Purpose: hook attention by making AI feel cheap, broad, tireless, and already close at hand.
-
-#slide(title: [The Question])[
-  #callout[
-    If AI can do the task #accent[faster], what are you still in school to learn?
+#slide(title: [AI Is Already Here], config: default-slide-config)[
+  #align(center)[
+    #image("images/ai-is-already-here.png", height: 90%)
+    #v(1fr)
+    #place(bottom + center, callout[
+      AI can already help with #accent[writing], #accent[revision], #accent[code], #accent[images], and #accent[planning].
+    ])
   ]
-
-  #v(1em)
-
-  - The car goes faster. We still run.
-  - Better tools do not remove human effort; they #warm[change what human effort is for].
-  - Learning is still how you build judgment, taste, and control.
 ]
-// Graphic: split image of a sports car beside a runner on a track.
-// Tone: slightly funny, slightly confrontational, with enough empty space for a short headline.
-// Purpose: open with a visual joke that immediately leads into the core question of the talk.
-
-#slide(title: [AI Is Already Here])[
-  #callout[
-    AI can already help with #accent[writing], #accent[revision], #accent[code], #accent[images], and #accent[planning].
-  ]
-
-  #v(1em)
-
-  - This is not a future demo anymore.
-  - Many students are already using it quietly.
-  - The baseline for what one person can produce is moving.
+#speaker-note[
+  This is not a future demo anymore. This is happening today.
 ]
 // Graphic: collage of AI outputs on one desk: essay feedback, code editor, generated image, spreadsheet, and notes.
 // Tone: busy and energetic, like one student suddenly having many extra capabilities.
 // Purpose: show breadth without explaining technical details.
 
-#slide(title: [Your Timing Matters])[
+
+#slide(title: [The Question], config: default-slide-config)[
+  #align(center)[
+    #image("images/the-question.png", width: 100% + 48pt)
+    #v(1fr)
+    #place(bottom + center, callout[
+      If a car run #accent[faster], what are you still in school to learn?
+    ])
+  ]
+]
+#speaker-note[
+  - The car goes faster. We still run.
+  - Better tools do not remove human effort; they #warm[change what human effort is for].
+  - Learning is still how you build judgment, taste, and control.
+]
+
+#slide(title: [Your Timing Matters], config: default-slide-config)[
   #callout[
     You are entering university and work just as the rules start to shift.
   ]
@@ -172,7 +175,7 @@
 // Tone: uncertain but not apocalyptic.
 // Purpose: make the change feel personal to JC students about to leave school.
 
-#slide(title: [Do Not Wait for Permission])[
+#slide(title: [Do Not Wait for Permission], config: default-slide-config)[
   #callout[
     Schools, universities, and companies are still figuring out what "using AI well" even means.
   ]
@@ -187,7 +190,7 @@
 // Tone: systems moving slowly while technology races ahead.
 // Purpose: justify self-directed learning without sounding anti-school.
 
-#slide(title: [The Real Competition])[
+#slide(title: [The Real Competition], config: default-slide-config)[
   #callout[
     #warm[AI is not the only thing competing with you.] The person using AI well is.
   ]
@@ -202,7 +205,7 @@
 // Tone: sharp contrast, visually easy to understand at a glance.
 // Purpose: make the "AI won't replace you, a person with AI might" idea memorable.
 
-#slide(title: [How To Work With AI])[
+#slide(title: [How To Work With AI], config: default-slide-config)[
   #callout[
     Treat AI as a #accent[tutor], #accent[sparring partner], #accent[intern], and #accent[automator].
   ]
@@ -218,7 +221,7 @@
 // Tone: structured and practical, less cinematic than earlier slides.
 // Purpose: turn a vague idea into a usable mental model.
 
-#slide(title: [Start Experimenting Now])[
+#slide(title: [Start Experimenting Now], config: default-slide-config)[
   #callout[
     The fastest way to learn is to #warm[try things before you need them badly].
   ]
@@ -234,7 +237,7 @@
 // Tone: playful, action-oriented, slightly game-like.
 // Purpose: convert urgency into a concrete first step.
 
-#slide(title: [Use It, Do Not Surrender To It])[
+#slide(title: [Use It, Do Not Surrender To It], config: default-slide-config)[
   #callout[
     AI is powerful, but your job is still to #accent[verify], #accent[decide], and #accent[take responsibility].
   ]
@@ -249,7 +252,7 @@
 // Tone: confident human control, not anti-AI fear.
 // Purpose: keep the talk credible by acknowledging limits and judgment.
 
-#slide(title: [Closing Challenge])[
+#slide(title: [Closing Challenge], config: default-slide-config)[
   #callout[
     Learn to work with AI #warm[before] the world quietly starts expecting you to.
   ]
