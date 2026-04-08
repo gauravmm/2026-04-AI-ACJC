@@ -90,8 +90,8 @@
   ])
 ]
 
+== By The Time You Graduate
 #slide(
-  title: [By The Time You Graduate],
   config: default-slide-config(),
 )[
   #align(center, text(size: 24pt)[
@@ -129,7 +129,8 @@
   ])
 ]
 
-#slide(title: [AI Is Already Here], config: default-slide-config())[
+== AI Is Already Here
+#slide(config: default-slide-config())[
   #align(center)[
     #image("images/ai-is-already-here.png", height: 90%)
     #v(1fr)
@@ -146,7 +147,8 @@
 // Purpose: show breadth without explaining technical details.
 
 
-#slide(title: [The Question], config: default-slide-config())[
+== The Question
+#slide(config: default-slide-config())[
   #align(center)[
     #image("images/the-question.png", width: 100% + 48pt)
     #v(1fr)
@@ -166,7 +168,8 @@
 // Purpose: set up the central metaphor of the talk and the main challenge.
 
 
-#slide(title: [The Real Competition], config: default-slide-config())[
+== The Real Competition
+#slide(config: default-slide-config())[
   #place(top + center, dy: -24pt)[
     #image("images/the-real-competition.png", width: 100% + 48pt)
   ]
@@ -182,8 +185,8 @@
 // Tone: sharp contrast, visually easy to understand at a glance.
 // Purpose: make the "AI won't replace you, a person with AI might" idea memorable.
 
-
-#slide(title: [Do Not Wait for Permission], config: default-slide-config(margin: (left: 0pt)), composer: (
+== Do Not Wait for Permission
+#slide(config: default-slide-config(margin: (left: 0pt)), composer: (
   auto,
   1fr,
 ))[
@@ -204,8 +207,8 @@
 // Tone: systems moving slowly while technology races ahead.
 // Purpose: justify self-directed learning without sounding anti-school.
 
-
-#slide(title: [Start Experimenting Now], config: default-slide-config())[
+== Start Experimenting Now
+#slide(config: default-slide-config())[
   #callout[
     The fastest way to learn is to #warm[try things before you need them badly].
   ]
@@ -221,8 +224,8 @@
 // Tone: playful, action-oriented, slightly game-like.
 // Purpose: convert urgency into a concrete first step.
 
-
-#slide(title: [How To Work With AI], config: default-slide-config())[
+== How To Work With AI
+#slide(config: default-slide-config())[
   #callout[
     Treat AI as a #accent[tutor], #accent[sparring partner], #accent[intern], and #accent[automator].
   ]
@@ -238,8 +241,8 @@
 // Tone: structured and practical, less cinematic than earlier slides.
 // Purpose: turn a vague idea into a usable mental model.
 
-
-#slide(title: [Use It, Do Not Surrender To It], config: default-slide-config())[
+== Use It, Do Not Surrender To It
+#slide(config: default-slide-config())[
   #callout[
     AI is powerful, but your job is still to #accent[verify], #accent[decide], and #accent[take responsibility].
   ]
@@ -254,7 +257,8 @@
 // Tone: confident human control, not anti-AI fear.
 // Purpose: keep the talk credible by acknowledging limits and judgment.
 
-#slide(title: [Closing Challenge], config: default-slide-config())[
+== Closing Challenge
+#slide(config: default-slide-config())[
   #callout[
     Learn to work with AI #warm[before] the world quietly starts expecting you to.
   ]
