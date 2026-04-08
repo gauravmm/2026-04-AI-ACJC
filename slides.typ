@@ -135,7 +135,7 @@
 
     #box(width: 180%, fill: palette.ink, outset: 12pt)[
       #text(fill: palette.violet)[history, economics, ]
-      #text(fill: palette.paper)[essays, calculus, biology, chemistry, and art]
+      #text(fill: palette.paper)[essays, calculus, biology, chemistry, art]
       #text(fill: palette.violet)[, design, finance, law]
     ]
     #v(.4em)#pause
