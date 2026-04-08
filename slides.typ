@@ -1,5 +1,5 @@
 #import "@preview/metropolyst:0.1.0": config-info, metropolyst-theme, slide, title-slide
-#import "@preview/touying:0.6.1": config-common, config-page
+#import "@preview/touying:0.6.1": config-common, config-page, pause
 
 #let palette = (
   ink: rgb("#080830"),
@@ -90,36 +90,36 @@
 ))[
   #align(center, text(size: 24pt)[
     For two bubble teas a month, you can rent an intelligence that
-  ])
 
-  #align(center, text(size: 24pt, fill: palette.violet, box(width: 200%, fill: palette.ink, outset: 12pt)[
-    #grid(rows: 3, columns: 1, gutter: 14pt)[
-      searches, remembers, brainstorms, compares, imitates, rehearses, maps, annotates, drafts
-    ][
-      summarizes, translates, plans,
-      #text(fill: palette.paper)[writes, explains, argues, tutors, codes, creates]
-      , revises, designs, analyzes
-    ][
-      tests, visualizes, prototypes, researches, refactors, optimizes, composes, outlines, automates, iterates
+    #box(width: 200%, fill: palette.ink, outset: 12pt)[
+      #set text(fill: palette.violet)
+      #grid(rows: 3, columns: 1, gutter: 14pt)[
+        searches, remembers, brainstorms, compares, imitates, rehearses, maps, annotates, drafts
+      ][
+        summarizes, translates, plans,
+        #text(fill: palette.paper)[writes, explains, argues, tutors, codes, creates]
+        , revises, designs, analyzes
+      ][
+        tests, visualizes, prototypes, researches, refactors, optimizes, composes, outlines, automates, iterates
+      ]
     ]
-  ]))
+    #v(.4em)
+    #pause
 
-  #align(center, text(size: 24pt)[
     It can help with
-  ])
 
-  #align(center, box(width: 180%, fill: palette.ink, outset: 12pt)[
-    #text(size: 24pt, fill: palette.violet)[history, economics, chemistry, ]
-    #text(size: 24pt, fill: palette.paper)[essays, calculus, biology, chemistry, and art]
-    #text(size: 24pt, fill: palette.violet)[, design, finance, law, and philosophy.]
-  ])
+    #box(width: 180%, fill: palette.ink, outset: 12pt)[
+      #text(fill: palette.violet)[history, economics, chemistry, ]
+      #text(fill: palette.paper)[essays, calculus, biology, chemistry, and art]
+      #text(fill: palette.violet)[, design, finance, law, and philosophy.]
+    ]
+    #v(.4em)#pause
 
-  #align(center, text(size: 24pt)[
     It never needs sleep, motivation, or a lunch break.
-  ])
+    #v(0em)#pause
 
-  #align(center, text(size: 24pt)[
-    It is not always right, but it is always available, always fast, and always ready to try again.
+    It is not always right, but it is\
+    always #warm[available], always #warm[fast], and always #warm[ready] to try again.
   ])
 ]
 
