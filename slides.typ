@@ -1,5 +1,6 @@
 #import "@preview/touying:0.6.1": config-common, config-page, pause, speaker-note
 #import "@preview/metropolyst:0.1.0": config-info, metropolyst-theme, slide, title-slide
+#import "@preview/tiaoma:0.3.0"
 
 #let palette = (
   ink: rgb("#080830"),
@@ -24,6 +25,21 @@
   stroke: 1pt + palette.magenta,
 )[#body]
 
+#let graphic-stub(label, width: 100%, height: 100%) = box(
+  width: width,
+  height: height,
+  inset: 24pt,
+  radius: 18pt,
+  fill: palette.panel.transparentize(15%),
+  stroke: 1.5pt + palette.magenta,
+  clip: true,
+)[
+  #place(center, [
+    #text(fill: palette.mist, weight: 700)[Graphic Stub]\
+    #text(fill: palette.cyan)[#label]
+  ])
+]
+
 #let backdrop(image-path, dim: 0%) = box(width: 100%, height: 100%, clip: true)[
   #place(
     top + left,
@@ -40,7 +56,7 @@
 #let default-slide-config(..args) = config-page(
   background: backdrop("images/bg.png", dim: 20%),
   header: none,
-  margin: 24pt,
+  margin: (top: 24pt, left: 24pt, right: 24pt, bottom: 24pt),
   ..args,
 )
 
@@ -209,72 +225,172 @@
 
   Waiting for an official syllabus is too slow.
 ]
+#speaker-note[
+  - Do Not Wait for Permission
+  - The world is changing fast, and the rules are not set yet.
+  - This is a risk, but it is also a generational responsibility and opportunity.
+  - The last time this much change happened was the internet, and the students who experimented early had a huge advantage.
+]
 // Graphic: a classroom or lecture hall overlaid with loading bars, revision marks, or "updating..." motifs.
 // Tone: systems moving slowly while technology races ahead.
 // Purpose: justify self-directed learning without sounding anti-school.
 
 == Start Experimenting Now
-#slide(config: default-slide-config())[
+#slide(config: default-slide-config(margin: (left: 0pt, top: 0pt, bottom: 0pt)), composer: (
+  auto,
+  1fr,
+))[
+  #v(1fr)
+  #image("images/start-experimenting-now.png", width: 8cm)
+  #v(1fr)
+][
   #callout[
-    The fastest way to learn is to #warm[try things before you need them badly].
+    Experiment early, #warm[while mistakes are still cheap.]
   ]
 
-  #v(1em)
+  #pause
+  Open an account and use it regularly.
 
-  - Open an account and use it regularly.
-  - Make it teach you, critique your work, and generate ideas.
-  - Try code, art, music, notes, or revision prompts.
-  - See what breaks, then learn how to recover.
+  Make it teach you, critique your work, generate ideas.
+
+  Use it to make art and music, to take notes, and to revise your work.
+
+  #pause
+  Try code, art, music, notes, or revision prompts.
+
+  See what breaks, #warm[then learn how to recover.]
+]
+#speaker-note[
+  - Do not wait for a perfect use case.
+  - The point is to build instinct by trying many small experiments.
+  - Learn where AI helps, where it fails, and how to recover when it fails.
 ]
 // Graphic: a challenge board or checklist styled like a 7-day sprint, with tasks getting ticked off.
 // Tone: playful, action-oriented, slightly game-like.
 // Purpose: convert urgency into a concrete first step.
 
 == How To Work With AI
-#slide(config: default-slide-config())[
+#slide(config: default-slide-config(margin: (left: 24pt, top: 0pt, bottom: 0pt)), composer: (
+  auto,
+  1fr,
+))[
+  #v(1fr)
+  #image("images/how-to-work-with-ai.png", height: 80%)
+  #v(1fr)
+][
   #callout[
-    Treat AI as a #accent[tutor], #accent[sparring partner], #accent[intern], and #accent[automator].
+    Use AI in diverse ways to experience its strengths and weaknesses.
   ]
 
-  #v(1em)
+  *Tutor:* ask it to explain things at your level.
 
-  - Tutor: explain things at your level.
-  - Sparring partner: challenge your argument and point out gaps.
-  - Intern: draft version 1 quickly.
-  - Automator: handle repetitive tasks.
+  *Sparring partner:* ask it to challenge your reasoning, and defend your position. Get another AI to judge the debate.
+
+  *Intern:* let it research topics and draft email replies.
+
+  *Automator:* give it repetitive work. Have it sort out your files, convert notes into flash cards, etc.
+]
+#speaker-note[
+  - Tutor: ask it to explain things at your level. Have it explain things you do understand to check it. Have it explain things in different ways, and quiz you.
+  - Sparring partner: ask it to challenge your reasoning, and defend your position. Get another AI to judge the debate.
+  - Intern: let it research topics and draft email replies, then revise and rewrite them yourself. Use it to brainstorm ideas, then pick the best ones and develop them yourself.
+  - Automator: give it repetitive work, then check the result. Have it read your emails and draft replies, sort out your files, convert notes into flash cards, etc.
 ]
 // Graphic: four bold cards or panels, each showing one role with a simple icon and an example task.
 // Tone: structured and practical, less cinematic than earlier slides.
 // Purpose: turn a vague idea into a usable mental model.
 
 == Use It, Do Not Surrender To It
-#slide(config: default-slide-config())[
+#slide(config: default-slide-config(margin: (left: 0pt, top: 0pt, bottom: 0pt)), composer: (
+  auto,
+  1fr,
+))[
+  #image("images/use-it-do-not-surrender-to-it.png", height: 100%)
+][
+  AI is powerful, but your job is still to #accent[verify], #accent[decide], and #accent[take responsibility].
+
   #callout[
-    AI is powerful, but your job is still to #accent[verify], #accent[decide], and #accent[take responsibility].
-  ]
+    You are in the driver's seat.
+  ]#pause
 
-  #v(1em)
+  It is often wrong.
 
-  - It can be wrong.
-  - It can sound confident while being wrong.
-  - If you stop thinking, you lose the real benefit.
+  It will be *confidently* wrong.
+
+  If you stop thinking, you lose the only real advantage you have.
+]
+#speaker-note[
+  - AI can be wrong, and it can sound confident while being wrong.
+  - Do not surrender judgment.
+  - The value comes from thinking at a higher level, not from switching your brain off.
 ]
 // Graphic: human hand on the steering wheel while an AI dashboard suggests routes and actions.
 // Tone: confident human control, not anti-AI fear.
 // Purpose: keep the talk credible by acknowledging limits and judgment.
 
+
+== Ocellivision
+#slide(config: default-slide-config(), composer: (
+  auto,
+  1fr,
+))[
+  #image("assets/mug.png", width: 8cm)
+][
+  *At Ocellivision, we're building the future of microscopes for cancer surgery.*
+
+  We're developing AI tools that are #emph[accurate], #emph[explainable], and #emph[auditable], so we can *trust* them.
+
+  There's no blueprint for how to do this, so we have to experiment and learn as we go.
+]
+#speaker-note[
+  - for highly regulated medical paperwork: the systems, records, and checks that prove a medical product is made safely and consistently.
+  - We don't have time to wait for perfect solutions, so we build the best tools we can now, and then we learn from using them.
+  - This is the same mindset I encourage students to take with AI in their learning: start experimenting, learn from it, and build your instincts.
+]
+
+
 == Closing Challenge
-#slide(config: default-slide-config())[
-  #callout[
-    Learn to work with AI #warm[before] the world quietly starts expecting you to.
+#slide(config: default-slide-config(), composer: (
+  auto,
+  1fr,
+))[
+  #place(top + left)[
+    #align(left)[
+      *Learn to work with AI #warm[now],\
+      #warm[before] the world quietly starts expecting you to.*
+    ]
   ]
-
-  #v(1em)
-
+  #place(bottom + center, dy: 24pt)[
+    #image("images/closing-challenge.png", width: 100% + 48pt, height: 100%)
+  ]
+]
+#speaker-note[
   - Start early.
   - Build instincts.
   - Arrive at university already experimenting.
+  - Learn to work with AI before it learns to work around you.
 ]
-// Graphic: a lunch tray on a conveyor belt moving away while one student reaches early and another reacts too late.
-// Tone: witty callback to the title, with a sense of urgency and agency.
-// Purpose: end on the central metaphor and a clear call to action.
+
+== Ending Slide
+#slide(
+  config: config-page(
+    header: none,
+    background: backdrop("images/title.png"),
+    footer: none,
+    margin: 0pt,
+  ),
+)[
+
+  #place(horizon + right, dx: -48pt)[
+    #align(center + horizon)[
+      #box(fill: palette.paper, inset: 1em, radius: .25em, stroke: 2pt + palette.mist)[
+        #link("https://www.gauravmanek.com/lectures/2026/ai-acjc/")[
+          #tiaoma.qrcode("https://www.gauravmanek.com/lectures/2026/ai-acjc/", options: (scale: 4.0), width: 8cm)
+        ]
+        #text(fill: palette.ink, weight: 700)[Scan for more!]
+      ]
+    ]
+  ])
+
+
+]
