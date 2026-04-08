@@ -17,11 +17,12 @@
 #let warm(body) = text(fill: palette.amber, body)
 #let callout(body) = block(
   width: 100%,
-  inset: 16pt,
+  inset: (y: 16pt),
+  outset: (x: 16pt),
   radius: 12pt,
   fill: palette.panel,
   stroke: 1pt + palette.magenta,
-)[#text(size: 24pt, body)]
+)[#body]
 
 #let backdrop(image-path, dim: 0%) = box(width: 100%, height: 100%, clip: true)[
   #place(
@@ -68,6 +69,8 @@
   ),
 )
 
+#set text(size: 24pt)
+
 // #place(top + left, rect(width: 100%, height: 100%, fill: rgb(5, 6, 28, 42%), stroke: none))
 // #place(top + left, rect(width: 58%, height: 100%, fill: rgb(8, 8, 48, 42%), stroke: none))
 
@@ -85,7 +88,7 @@
   ])
 
   #place(bottom + left, dx: 0pt, dy: 0pt, box(outset: 12pt, radius: 12pt, fill: palette.night.transparentize(20%))[
-    #text(size: 24pt, fill: palette.cyan, weight: 700)[Dr. Gaurav Manek]\
+    #text(fill: palette.cyan, weight: 700)[Dr. Gaurav Manek]\
     #text(size: 20pt, fill: palette.mist)[A*STAR]
   ])
 ]
@@ -94,7 +97,7 @@
 #slide(
   config: default-slide-config(),
 )[
-  #align(center, text(size: 24pt)[
+  #align(center)[
     For two bubble teas a month, you can rent an intelligence that
 
     #box(width: 200%, fill: palette.ink, outset: 12pt)[
@@ -126,7 +129,7 @@
 
     It is not always right, but it is\
     always #warm[available], always #warm[fast], and always #warm[ready] to try again.
-  ])
+  ]
 ]
 
 == AI Is Already Here
@@ -190,18 +193,21 @@
   auto,
   1fr,
 ))[
-  #image("images/do-not-wait-for-permission.png", height: 100%)
+  #image("images/do-not-wait-for-permission.png", height: 120%)
 ][
+  You are entering university and work just as the rules are shifting.
+
+  That is risky, but it is also an opportunity.
+
+  #pause
   #callout[
-    You are entering university and work just as the rules start to shift.
+    _Nobody_ knows what jobs will look like three years from now.
   ]
 
-  - Older students had a more stable playbook.
-  - Your batch will likely be asked to work differently.
-  - That is risky, but it is also an opportunity.
-  - Even institutions are experimenting.
-  - In many fields, nobody can clearly describe the workflow three years from now.
-  - Waiting for an official syllabus is too slow.
+  #pause
+  Even institutions are experimenting.
+
+  Waiting for an official syllabus is too slow.
 ]
 // Graphic: a classroom or lecture hall overlaid with loading bars, revision marks, or "updating..." motifs.
 // Tone: systems moving slowly while technology races ahead.
