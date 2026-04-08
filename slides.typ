@@ -23,11 +23,17 @@
   stroke: 1pt + palette.magenta,
 )[#text(size: 24pt, body)]
 
-#let title-backdrop() = box(width: 100%, height: 100%, clip: true)[
+#let backdrop(image-path, dim: 0%) = box(width: 100%, height: 100%, clip: true)[
   #place(
     top + left,
-    image("images/title.png", width: 100%, height: 100%, fit: "cover"),
+    image(image-path, width: 100%, height: 100%, fit: "cover"),
   )
+  #if dim != 0% [
+    #place(
+      top + left,
+      rect(width: 100%, height: 100%, fill: palette.night.transparentize(dim), stroke: none),
+    )
+  ]
 ]
 
 #show strong: it => text(weight: 700, fill: palette.paper, it.body)
@@ -61,7 +67,7 @@
 #slide(
   config: config-page(
     header: none,
-    background: title-backdrop(),
+    background: backdrop("images/title.png"),
     footer: none,
   )
     + config-common(freeze-slide-counter: true),
@@ -77,21 +83,46 @@
   ])
 ]
 
-#slide(title: [By The Time You Graduate])[
+#slide(title: [By The Time You Graduate], config: config-page(
+  header: none,
+  background: backdrop("images/bg.png", dim: 20%),
+  margin: 0pt,
+))[
   #align(center, text(size: 24pt)[
     For two bubble teas a month, you can rent an intelligence that
+  ])
 
-    writes, explains, argues, critiques, codes, and creates
+  #align(center, text(size: 24pt, fill: palette.violet, box(width: 200%, fill: palette.ink, outset: 12pt)[
+    #grid(rows: 3, columns: 1, gutter: 14pt)[
+      searches, remembers, brainstorms, compares, imitates, rehearses, maps, annotates, drafts
+    ][
+      summarizes, translates, plans,
+      #text(fill: palette.paper)[writes, explains, argues, tutors, codes, creates]
+      , revises, designs, analyzes
+    ][
+      tests, visualizes, prototypes, researches, refactors, optimizes, composes, outlines, automates, iterates
+    ]
+  ]))
 
+  #align(center, text(size: 24pt)[
     It can help with
+  ])
 
-    essays, calculus, programming, politics, and art.
+  #align(center, box(width: 180%, fill: palette.ink, outset: 12pt)[
+    #text(size: 24pt, fill: palette.violet)[history, economics, chemistry, ]
+    #text(size: 24pt, fill: palette.paper)[essays, calculus, biology, chemistry, and art]
+    #text(size: 24pt, fill: palette.violet)[, design, finance, law, and philosophy.]
+  ])
 
+  #align(center, text(size: 24pt)[
     It never needs sleep, motivation, or a lunch break.
+  ])
 
+  #align(center, text(size: 24pt)[
     It is not always right, but it is always available, always fast, and always ready to try again.
   ])
 ]
+
 // Graphic: a student desk at night with notes, laptop, bubble tea cups, and a ghostly AI presence woven through the scene like an invisible extra worker.
 // Tone: unsettling but plausible, like an unfair advantage that already fits into ordinary student life.
 // Purpose: hook attention by making AI feel cheap, broad, tireless, and already close at hand.
